@@ -1,0 +1,83 @@
+/* src/index.css */
+@import "tailwindcss";
+
+/* ===== FONT FACE SETUP ===== */
+@font-face {
+  font-family: "Hind Siliguri-light";
+  src: url(assets/font/HindSiliguri-Light.ttf);
+
+}
+
+@font-face {
+  font-family: "Hind Siliguri-Regular";
+  src: url(assets/font/HindSiliguri-Regular.ttf);
+
+}
+
+@font-face {
+  font-family: "Hind Siliguri-Medium";
+  src: url(assets/font/HindSiliguri-Medium.ttf);
+
+}
+
+@font-face {
+  font-family: "Hind Siliguri-bold";
+  src: url(assets/font/HindSiliguri-Bold.ttf);
+
+}
+
+@font-face {
+  font-family: "Hind Siliguri-SemiBold";
+  src: url(assets/font/HindSiliguri-SemiBold.ttf);
+
+}
+
+
+
+
+
+
+/* font-family: "Hind Siliguri", sans-serif; */
+/* primary color #78c841 */
+/* ===== GLOBAL RESET ===== */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Hind Siliguri-Regular", sans-serif;
+
+  }
+}
+
+/* font-family: "Yanone Kaffeesatz", sans-serif; */
+/* ===== EXTRA COMPONENT STYLES (OPTIONAL) ===== */
+@layer components {
+
+  /* custom class use */
+  .clip_path {
+    clip-path: polygon(0 0, 49% 25%, 100% 0, 100% 99%, 0 100%);
+
+
+  }
+
+}
+
+/* ===== THEME VARIABLES (TAILWIND v4) ===== */
+@theme {
+  /* Colors */
+  --color-primary: #ff914c;
+  --color-secondary: #06213fff;
+  --color-Light_primary: #ff914c79;
+  /* Jakarta Font Variables */
+  /* Hind Siliguri Font Variables */
+  --font-hind-light: "Hind Siliguri-light", sans-serif;
+  --font-hind-regular: "Hind Siliguri-Regular", sans-serif;
+  --font-hind-medium: "Hind Siliguri-Medium", sans-serif;
+  --font-hind-semibold: "Hind Siliguri-SemiBold", sans-serif;
+  --font-hind-bold: "Hind Siliguri-bold", sans-serif;
+
+}
