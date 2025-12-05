@@ -5,11 +5,13 @@ import {
   FiHome, FiPlus, FiEdit, FiTrash2, FiLoader, FiUpload
 } from "react-icons/fi";
 import useStore from "../store/api_call";
+import { useNavigate } from "react-router-dom";
 
 /* ===========================
    ImageUploader (multiple)
    =========================== */
 const ImageUploader = ({ images = [], onAddImage, onRemoveImage }) => {
+
   const { uploadImage, deleteImage } = useStore();
   const [loadingIds, setLoadingIds] = useState([]);
   const [error, setError] = useState(null);
@@ -424,6 +426,23 @@ const ListManager = ({ title, Icon, items = [], loading, error, fetchItems, crea
    Admin Main
    =========================== */
 const Admin = () => {
+  const PROTECTED_KEY = 'admin_authenticated';
+  const navigate = useNavigate();
+
+  // 🚪 লগআউট ফাংশন
+  const handleLogout = () => {
+    // 1. localStorage থেকে অথেন্টিকেশন স্টেট মুছে ফেলা
+    localStorage.removeItem(PROTECTED_KEY);
+
+    // 2. টোস্ট মেসেজ দেখানো
+    toast('👋 Successfully Logged Out!', {
+      icon: '🚪',
+      duration: 3000,
+    });
+
+    // 3. ব্যবহারকারীকে হোমপেজে রিডাইরেক্ট করা
+    navigate('/'); 
+  };
   const {
     adminData, loadingAdmin, errorAdmin, fetchAdmin, saveAdmin,
     flashSaleProducts, loadingProducts, errorProducts, fetchProducts, createProduct, updateProduct, deleteProduct,
@@ -432,11 +451,27 @@ const Admin = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
+          <button 
+        onClick={handleLogout}
+        style={{
+          padding: '10px 20px',
+          fontSize: '16px',
+          cursor: 'pointer',
+          backgroundColor: '#dc3545', // লাল রং
+          color: 'white',
+          border: 'none',
+          borderRadius: '5px',
+          marginTop: '20px',
+        }}
+      >
+        Log Out
+      </button>
       <Toaster position="top-right" />
       <header className="bg-indigo-700 text-white sticky top-0 z-20">
         <div className="max-w-6xl mx-auto p-4 flex items-center justify-between">
           <h1 className="text-2xl font-bold flex items-center gap-3"><FiHome /> অ্যাডমিন ড্যাশবোর্ড</h1>
         </div>
+    
       </header>
 
       <main className="max-w-6xl mx-auto py-8 space-y-6 px-4">
