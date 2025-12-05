@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 
 const PROTECTED_KEY = 'admin_authenticated';
-const STATIC_USERNAME = 'majumder123'; // Static Username
-const STATIC_PASSWORD = 'majumder123'; // Static Password
+const STATIC_USERNAME = 'majumder@2.0'; // Static Username
+const STATIC_PASSWORD = 'majumder@2.0'; // Static Password
 
 const ProtectedRoute = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(
