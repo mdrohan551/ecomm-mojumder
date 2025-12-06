@@ -38,7 +38,7 @@ mongoose.connect(URL, options)
 app.use(cookieParser());
 
 const corsOptions = {
-  origin:['https://ecomm-d.onrender.com','http://localhost:5173'], // frontend URL
+  origin:"*", // frontend URL
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
