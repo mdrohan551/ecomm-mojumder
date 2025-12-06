@@ -4,11 +4,11 @@ import { FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa';
 import { FiPhoneCall } from 'react-icons/fi';
 import useStore from '../../store/api_call';
 
-const BannerSlider = ({scrollToFlash }) => {
+const BannerSlider = ({ scrollToFlash }) => {
     const { sliders, fetchSliders } = useStore();
     const [currentSlide, setCurrentSlide] = useState(0);
-    const {adminData} =useStore()
-        const rawNumber = adminData?.phoneNumber || '0000000000';
+    const { adminData } = useStore()
+    const rawNumber = adminData?.phoneNumber || '0000000000';
     const phoneNumber = rawNumber.startsWith('880') ? rawNumber : '880' + rawNumber;
     // Slide change function
     const goToNext = useCallback(() => {

@@ -6,9 +6,9 @@ export const DBURL = process.env.DB;
 export const JWT_KEY = process.env.JWT;
 export const JWT_EXPIRE_TIME = 30 * 24 * 60 * 60;
 
-export const CLOUDINARY_CLOUD_NAME = "dyfvp3gc1";
-export const CLOUDINARY_API_KEY = "643432138926554";
-export const CLOUDINARY_API_SECRET_KEY = "kV7dIxVnfYaZyCP60nVkCDbDpxI";
+export const CLOUDINARY_CLOUD_NAME = process.env.NAME
+export const CLOUDINARY_API_KEY =process.env.API_KEY
+export const CLOUDINARY_API_SECRET_KEY = process.env.API_SECRET_KEY
 
 
 export const WEB_CACHE = false;

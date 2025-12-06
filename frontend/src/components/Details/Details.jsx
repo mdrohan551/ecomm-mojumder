@@ -96,7 +96,7 @@ const Details = () => {
                             {/* Buttons */}
                             <div className="flex space-x-4 pt-6">
                                 <a
-                                    href={`callto:${phoneNumber}`}
+                                    href={`tel:${phoneNumber}`}
                                     className={`flex-1 py-3 px-6 rounded-lg text-white font-semibold transition duration-300 flex items-center justify-center space-x-2 ${product.instock ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-400 cursor-not-allowed'}`}
                                     disabled={!product.instock}
                                 >

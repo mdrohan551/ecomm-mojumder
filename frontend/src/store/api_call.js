@@ -2,7 +2,7 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_URL = "https://ecomm-mojumder20.onrender.com/api/v1/";
+const API_URL = "https://ecomm-mojumder-lnfq.onrender.com/api/v1/";
 
 const useStore = create((set, get) => ({
   // Admin
