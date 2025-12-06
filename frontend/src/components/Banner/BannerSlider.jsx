@@ -7,7 +7,9 @@ import useStore from '../../store/api_call';
 const BannerSlider = ({scrollToFlash }) => {
     const { sliders, fetchSliders } = useStore();
     const [currentSlide, setCurrentSlide] = useState(0);
-
+    const {adminData} =useStore()
+        const rawNumber = adminData?.phoneNumber || '0000000000';
+    const phoneNumber = rawNumber.startsWith('880') ? rawNumber : '880' + rawNumber;
     // Slide change function
     const goToNext = useCallback(() => {
         if (!sliders || sliders.length === 0) return;
@@ -105,7 +107,7 @@ const BannerSlider = ({scrollToFlash }) => {
                                     <a href="https://www.tiktok.com/@alaminmajumder145" target="_blank" rel="noopener noreferrer" className="text-white bg-black p-2 rounded-full shadow-md hover:bg-gray-800 transition duration-200" aria-label="TikTok">
                                         <FaTiktok size={20} />
                                     </a>
-                                    <a href="tel:+880123456789" className="text-white bg-green-500 p-2 rounded-full shadow-md hover:bg-green-600 transition duration-200" aria-label="Call Us">
+                                    <a href={`tel:${phoneNumber}`} className="text-white bg-green-500 p-2 rounded-full shadow-md hover:bg-green-600 transition duration-200" aria-label="Call Us">
                                         <FiPhoneCall size={20} />
                                     </a>
                                 </div>
