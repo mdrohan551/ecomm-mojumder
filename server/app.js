@@ -38,7 +38,7 @@ mongoose.connect(URL, options)
 app.use(cookieParser());
 
 const corsOptions = {
-  origin:"http://localhost:5173/", // frontend URL
+  origin:"https://ecomm-mojumder-6wpj.vercel.app/", // frontend URL
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
