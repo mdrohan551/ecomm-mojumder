@@ -48,31 +48,6 @@ const Footer = () => {
 
 
 
-                    {/* কলাম ৩: সাহায্য এবং আইনি তথ্য */}
-                    <div className="space-y-3">
-                        <h4 className="text-lg font-bold mb-3 text-red-400">সাহায্য</h4>
-                        <Link
-                            to="/about"
-                            className="block text-sm text-gray-400 hover:text-white transition"
-                        >
-                            আমাদের সম্পর্কে
-                        </Link>
-                        {simpleLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                to={link.path}
-                                className="block text-sm text-gray-400 hover:text-white transition"
-                            >
-                                {link.name}
-                            </Link>
-                        ))}
-                        <Link
-                            to="/contact"
-                            className="block text-sm text-gray-400 hover:text-white transition"
-                        >
-                            যোগাযোগ করুন
-                        </Link>
-                    </div>
 
 
 
